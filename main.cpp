@@ -1,24 +1,35 @@
 #include <iostream>
+#include <string>
+#include "main.h"
 
 using namespace std;
 
-class XD
-{
-private:
-    static int lel;
 
-public:
-    void lel_plus()
-    {
-        cout << "lel: " << lel << endl;
-    }
+void XD::lel_plus() {
+    cout << "lel: " << lel <<endl;
+}
 
-    XD()
-    {
-        lel++;
-        lel_plus();
+
+char* XD::jakityp(int & zm) {
+    if(zm > 50) {
+        zm = 75;
+        return "zm > 50";
     }
-};
+    else {
+        zm = 25;
+        return "zm < 50";
+    }
+}
+
+XD::XD() {
+    lel_plus();
+    lel++;
+}
+
+XD::~XD() {
+    cout << "No elo gosciu, destruktor here" << endl;
+}
+
 
 int XD::lel = 0;
 
@@ -65,6 +76,12 @@ int main() {
     gowno = segz;
     cout << "gowno: " << *gowno << endl;
 
+
+    int jot = 100;
+
+    XD hwdp;
+    cout << hwdp.jakityp(jot) << endl;
+    cout << "jot: " << jot << endl;
 
     return 0;
 }
